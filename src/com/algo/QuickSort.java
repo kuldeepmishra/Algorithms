@@ -1,6 +1,5 @@
 package com.algo;
 
-
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -25,31 +24,31 @@ public class QuickSort {
 	}
 
 	public static void quickSort(int[] arr) {
-		quickSort(arr, 0, arr.length-1);
+		quickSort(arr, 0, arr.length - 1);
 	}
 
 	private static void quickSort(int[] arr, int left, int right) {
-		if(left >= right) {
+		if (left >= right) {
 			return;
 		}
 
-		int pivot = arr[(left+right)/2];
+		int pivot = arr[(left + right) / 2];
 		int index = partition(arr, left, right, pivot);
-		quickSort(arr, left, index-1);
+		quickSort(arr, left, index - 1);
 		quickSort(arr, index, right);
 	}
 
 	private static int partition(int[] arr, int left, int right, int pivot) {
-		while(left <= right) {
-			while(arr[left] < pivot) {
+		while (left <= right) {
+			while (arr[left] < pivot) {
 				left++;
 			}
 
-			while(arr[right] > pivot) {
+			while (arr[right] > pivot) {
 				right--;
 			}
 
-			if(left <= right) {
+			if (left <= right) {
 				swap(arr, left, right);
 				left++;
 				right--;
